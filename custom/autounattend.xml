@@ -667,9 +667,15 @@ Where-Object -FilterScript {
   }
   
   # Enable the Ultimate Performance power plan
+  # Windows 11
+  powercfg -duplicatescheme cd56a120-fe0b-41ac-aa43-17e7a09c08ee
+  # Windows 10
   powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
   
   # Set the Ultimate Performance power plan as active
+  # Windows 11
+  powercfg -setactive cd56a120-fe0b-41ac-aa43-17e7a09c08ee
+  # Windows 10
   powercfg -setactive e9a42b02-d5df-448d-aa00-03f14749eb61
   
   # Set Services to Manual
@@ -707,7 +713,7 @@ Where-Object -FilterScript {
   Set-Service -Name 'CryptSvc' -StartupType Automatic -ErrorAction Continue
   Set-Service -Name 'CscService' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'DPS' -StartupType Automatic -ErrorAction Continue
-  Set-Service -Name 'DcomLaunch' -StartupType Automatic -ErrorAction Continue
+  Set-Service -Name 'DcomLaunch' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'DcpSvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'DevQueryBroker' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'DeviceAssociationBrokerSvc_*' -StartupType Manual -ErrorAction Continue
@@ -725,7 +731,7 @@ Where-Object -FilterScript {
   Set-Service -Name 'DoSvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'DsSvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'DsmSvc' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'DusmSvc' -StartupType Automatic -ErrorAction Continue
+  Set-Service -Name 'DusmSvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'EFS' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'EapHost' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'EntAppSvc' -StartupType Disabled -ErrorAction Continue
@@ -850,7 +856,7 @@ Where-Object -FilterScript {
   Set-Service -Name 'UserManager' -StartupType Automatic -ErrorAction Continue
   Set-Service -Name 'UsoSvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'VGAuthService' -StartupType Automatic -ErrorAction Continue
-  Set-Service -Name 'VMTools' -StartupType Automatic -ErrorAction Continue
+  Set-Service -Name 'VMTools' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'VSS' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'VacSvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'VaultSvc' -StartupType Automatic -ErrorAction Continue
@@ -994,6 +1000,9 @@ reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Start" /v Conf
 reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Start" /v ConfigureStartPins_WinningProvider /t REG_SZ /d B5292708-1619-419B-9923-E5D9F3925E71 /f
 reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\providers\B5292708-1619-419B-9923-E5D9F3925E71\default\Device\Start" /v ConfigureStartPins /t REG_SZ /d "{ \"pinnedList\": [] }" /f
 reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\providers\B5292708-1619-419B-9923-E5D9F3925E71\default\Device\Start" /v ConfigureStartPins_LastWrite /t REG_DWORD /d 1 /f
+
+:: Remove recommended apps from start menu
+reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v HideRecommendedSection /t REG_DWORD /d 1 /f
 
 :: Enable Long File Paths with Up to 32,767 Characters
 reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
