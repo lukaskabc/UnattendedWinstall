@@ -772,16 +772,16 @@ Where-Object -FilterScript {
   Set-Service -Name 'W32Time' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'WEPHOSTSVC' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'WFDSConMgrSvc' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'WMPNetworkSvc' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'WMPNetworkSvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'WManSvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'WPDBusEnum' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'WSService' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'WSearch' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'WaaSMedicSvc' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'WalletService' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'WalletService' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'WarpJITSvc' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'WbioSrvc' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'Wcmsvc' -StartupType Automatic -ErrorAction Continue
+  Set-Service -Name 'WbioSrvc' -StartupType Disabled -ErrorAction Continue
+  Set-Service -Name 'Wcmsvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'WcsPlugInService' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'WdNisSvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'WdiServiceHost' -StartupType Manual -ErrorAction Continue
@@ -792,18 +792,18 @@ Where-Object -FilterScript {
   Set-Service -Name 'WiaRpc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'WinDefend' -StartupType Automatic -ErrorAction Continue
   Set-Service -Name 'WinHttpAutoProxySvc' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'WinRM' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'WinRM' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'Winmgmt' -StartupType Automatic -ErrorAction Continue
-  Set-Service -Name 'WlanSvc' -StartupType Automatic -ErrorAction Continue
-  Set-Service -Name 'WpcMonSvc' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'WlanSvc' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'WpcMonSvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'WpnService' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'WpnUserService_*' -StartupType Automatic -ErrorAction Continue
-  Set-Service -Name 'WwanSvc' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'WwanSvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'XblAuthManager' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'XblGameSave' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'XboxGipSvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'XboxNetApiSvc' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'autotimesvc' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'autotimesvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'bthserv' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'camsvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'cbdhsvc_*' -StartupType Manual -ErrorAction Continue
@@ -812,26 +812,26 @@ Where-Object -FilterScript {
   Set-Service -Name 'defragsvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'diagnosticshub.standardcollector.service' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'diagsvc' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'dmwappushservice' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'dmwappushservice' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'dot3svc' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'edgeupdate' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'edgeupdatem' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'edgeupdate' -StartupType Disabled -ErrorAction Continue
+  Set-Service -Name 'edgeupdatem' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'embeddedmode' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'fdPHost' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'fhsvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'gpsvc' -StartupType Automatic -ErrorAction Continue
   Set-Service -Name 'hidserv' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'icssvc' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'iphlpsvc' -StartupType Automatic -ErrorAction Continue
-  Set-Service -Name 'lfsvc' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'icssvc' -StartupType Disabled -ErrorAction Continue
+  Set-Service -Name 'iphlpsvc' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'lfsvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'lltdsvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'lmhosts' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'mpssvc' -StartupType Automatic -ErrorAction Continue
   Set-Service -Name 'msiserver' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'netprofm' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'nsi' -StartupType Automatic -ErrorAction Continue
-  Set-Service -Name 'p2pimsvc' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'p2psvc' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'p2pimsvc' -StartupType Disabled -ErrorAction Continue
+  Set-Service -Name 'p2psvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'perceptionsimulation' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'pla' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'seclogon' -StartupType Manual -ErrorAction Continue
@@ -842,7 +842,7 @@ Where-Object -FilterScript {
   Set-Service -Name 'ssh-agent' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'svsvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'swprv' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'tiledatamodelsvc' -StartupType Automatic -ErrorAction Continue
+  Set-Service -Name 'tiledatamodelsvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'tzautoupdate' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'uhssvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'upnphost' -StartupType Manual -ErrorAction Continue
@@ -862,11 +862,11 @@ Where-Object -FilterScript {
   Set-Service -Name 'webthreatdefsvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'webthreatdefusersvc_*' -StartupType Automatic -ErrorAction Continue
   Set-Service -Name 'wercplsupport' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'wisvc' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'wisvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'wlidsvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'wlpasvc' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'wmiApSrv' -StartupType Manual -ErrorAction Continue
-  Set-Service -Name 'workfolderssvc' -StartupType Manual -ErrorAction Continue
+  Set-Service -Name 'workfolderssvc' -StartupType Disabled -ErrorAction Continue
   Set-Service -Name 'wuauserv' -StartupType Manual -ErrorAction Continue
   Set-Service -Name 'wudfsvc' -StartupType Manual -ErrorAction Continue
   
