@@ -369,10 +369,11 @@ Where-Object -FilterScript {
   );
 } | Remove-WindowsCapability -Online -ErrorAction 'Continue']]>
     </File>
-    <!-- removes Recall (windows optional feature) -->
+    <!-- removes Recall (windows optional feature) and work folders client -->
     <File path="C:\Windows\Temp\remove-features.ps1">
       $selectors = @(
         'Recall';
+        'Work Folders Client';
       );
       $getCommand = { Get-WindowsOptionalFeature -Online; };
       $filterCommand = { $_.FeatureName -eq $selector; };
