@@ -1702,6 +1702,18 @@ $_Press_Enter
 </LayoutModificationTemplate>
 		]]>
     </File>
+    <!-- 
+    Windows Defender Application Control from https://schneegans.de/windows/unattend-generator/
+    Applications in C:\Windows, C:\Program Files and C:\Program Files (x86) are allowed to run. 
+    Applications stored elsewhere and those in known user-writable folders such as C:\Windows\Temp or C:\Windows\Debug\WIA are not allowed to run. 
+    To disable this WDAC policy later, simply delete the file C:\Windows\System32\CodeIntegrity\CiPolicies\Active\{d26bff32-33a2-48a3-b037-10357ee48427}.cip and reboot. 
+    
+    Auditing mode on boot failure is used
+    When the policy blocks a system driver and thus would prevent Windows from booting, use audit mode. Otherwise, use enforcement mode.
+
+    Auditing mode = Logs drivers and applications that would have been blocked.
+    Enforcement mode = Drivers and applications will be blocked unless allowed by the policy.
+    -->
     <File path="%TEMP%\wdac.ps1">
       Set-StrictMode -Version 'Latest';
       $ErrorActionPreference = 'Stop';
